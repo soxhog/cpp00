@@ -28,6 +28,8 @@ bool	Contact::set_infos(int index)
 	{
 		std::cout << "$> " << Contact::fields[i] << ";\n$>>";
 		std::getline(std::cin, infos[i]);
+		if (!std::cin)
+			return (false);
 	}
 	totalSize = 0;
 	for (int i = 0; i < MAX_INFO; i++)

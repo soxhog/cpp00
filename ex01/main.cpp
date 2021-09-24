@@ -12,11 +12,15 @@ int	main(void)
 		std::getline(std::cin, command);
 		if (command == "ADD")
 		{
-			Phonebook.add_contact();
+			if (Phonebook.add_contact() == EOF_FLAG)
+				break ;
 			std::cout << CLEAR << START_POSITION;
 		}
 		else if (command == "SEARCH")
-			Phonebook.search_contact();
+		{
+			if (Phonebook.search_contact() == EOF_FLAG)
+				break ;
+		}
 		else if (command == "EXIT")
 		{
 			std::cout << "See you again!!" << std::endl;
