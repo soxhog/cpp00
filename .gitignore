@@ -1,3 +1,5 @@
 *.o
 a.out
 .DS_Store
+./ex00/megaphone
+./ex01/phonebook
