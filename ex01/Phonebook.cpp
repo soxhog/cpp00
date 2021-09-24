@@ -13,6 +13,11 @@ Phonebook::~Phonebook()
 void	Phonebook::show_first_screen(void)
 {
 	std::cout << "WELCOME TO PHONEBOOK!!" << std::endl;
+	show_command();
+}
+
+void	Phonebook::show_command(void)
+{
 	std::cout << "ENTER THE COMMAND LIKE..." << std::endl;
 	std::cout << "<ADD>" << std::endl;
 	std::cout << "	- The program will prompt the user to input a new contact’s information, one field at a time, until every field is accounted for." << std::endl;
@@ -25,6 +30,7 @@ void	Phonebook::show_first_screen(void)
 
 void	Phonebook::add_contact()
 {
+	std::cout << CLEAR << START_POSITION;
 	if (count >= MAX_CONTACT && count % MAX_CONTACT == 0)
 		index = 0;
 	if (contacts[index].set_infos(index + 1))
@@ -92,6 +98,7 @@ void	Phonebook::search_contact(void)
 		std::cout << "$> Add a contact before searching!!" << std::endl;
 	else
 	{
+		std::cout << CLEAR << START_POSITION;
 		display_search_header();
 		if (count > MAX_CONTACT)
 			maxIndex = MAX_CONTACT;

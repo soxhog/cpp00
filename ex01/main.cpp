@@ -19,6 +19,9 @@ int	main(void)
 			std::cout << "See you again!!" << std::endl;
 			break ;
 		}
+		if (command == "ADD")
+			std::cout << CLEAR << START_POSITION;
+		Phonebook.show_command();
 	}
 	return (0);
 }

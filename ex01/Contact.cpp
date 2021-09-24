@@ -31,7 +31,7 @@ bool	Contact::set_infos(int index)
 	}
 	totalSize = 0;
 	for (int i = 0; i < MAX_INFO; i++)
-		totalSize = infos[i].length();
+		totalSize += infos[i].length();
 	if (totalSize == 0)
 	{
 		std::cout << "$> You can NOT add empty contact!!!" << std::endl;
