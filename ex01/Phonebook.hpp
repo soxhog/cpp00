@@ -24,7 +24,7 @@ public:
 	void	show_command(void);
 	void	add_contact(void);
 	void	search_contact(void);
-	void	display_search_header(void);
+	void	display_search_header(int maxIndex);
 };
 
 # endif

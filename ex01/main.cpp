@@ -6,12 +6,15 @@ int	main(void)
 	std::string command;
 
 	Phonebook.show_first_screen();
-	while (1)
+	while (std::cin)
 	{
 		std::cout << "$>> ";
 		std::getline(std::cin, command);
 		if (command == "ADD")
+		{
 			Phonebook.add_contact();
+			std::cout << CLEAR << START_POSITION;
+		}
 		else if (command == "SEARCH")
 			Phonebook.search_contact();
 		else if (command == "EXIT")
@@ -19,9 +22,8 @@ int	main(void)
 			std::cout << "See you again!!" << std::endl;
 			break ;
 		}
-		if (command == "ADD")
-			std::cout << CLEAR << START_POSITION;
-		Phonebook.show_command();
+		if (std::cin)
+			Phonebook.show_command();
 	}
 	return (0);
 }

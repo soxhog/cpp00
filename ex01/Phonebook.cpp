@@ -40,20 +40,14 @@ void	Phonebook::add_contact()
 	}
 }
 
-void	Phonebook::display_search_header()
+void	Phonebook::display_search_header(int maxIndex)
 {
-	int		maxIndex;
-
 	std::cout << "|-------------------------------------------|" << std::endl;
 	std::cout << "|" << std::setw(10) << "index";
 	std::cout << "|" << std::setw(10) << "first name";
 	std::cout << "|" << std::setw(10) << "last name";
 	std::cout << "|" << std::setw(10) << "nickname" << "|" << std::endl;
 	std::cout << "|-------------------------------------------|" << std::endl;
-	if (count > MAX_CONTACT)
-		maxIndex = MAX_CONTACT;
-	else
-		maxIndex = count;
 	for (int i = 0; i < maxIndex; i++)
 		contacts[i].display_header();
 	std::cout << "|-------------------------------------------|" << std::endl;
@@ -99,11 +93,11 @@ void	Phonebook::search_contact(void)
 	else
 	{
 		std::cout << CLEAR << START_POSITION;
-		display_search_header();
 		if (count > MAX_CONTACT)
 			maxIndex = MAX_CONTACT;
 		else
 			maxIndex = count;
+		display_search_header(maxIndex);
 		std::cout << "$> Enter the index you want to see!!!" << std::endl;
 		std::cout << "$>> ";
 		std::cin >> indexStr;

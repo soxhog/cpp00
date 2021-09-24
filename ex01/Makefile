@@ -1,14 +1,13 @@
-CC			= clang++
+CXX			= clang++
 CFLAGS		= -Wall -Wextra -Werror -I.
 SRCS		= main.cpp Phonebook.cpp Contact.cpp
 OBJS		= $(SRCS:.cpp=.o)
-RM			= rm -rf
 NAME		= phonebook
 
 all:	$(NAME)
 
 $(NAME):$(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)
