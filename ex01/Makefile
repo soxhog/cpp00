@@ -1,5 +1,5 @@
 CXX			= clang++
-CFLAGS		= -Wall -Wextra -Werror -I.
+CXXFLAGS	= -Wall -Wextra -Werror -I.
 SRCS		= main.cpp Phonebook.cpp Contact.cpp
 OBJS		= $(SRCS:.cpp=.o)
 NAME		= phonebook
@@ -7,7 +7,7 @@ NAME		= phonebook
 all:	$(NAME)
 
 $(NAME):$(OBJS)
-	$(CXX) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)
