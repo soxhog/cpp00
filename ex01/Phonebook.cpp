@@ -44,7 +44,7 @@ int	Phonebook::add_contact()
 		count++;
 		index++;
 	}
-	if (!std::cin)
+	if (std::cin.eof())
 		return (EOF_FLAG);
 	return (SUCCESS);
 }
@@ -66,7 +66,7 @@ bool isNumber(const std::string& str)
 {
 	char	c;
 
-	for (int i = 0; i < str.length(); i++)
+	for (size_t i = 0; i < str.length(); i++)
 	{
 		c = str[i];
 		if (std::isdigit(c) == 0)
@@ -115,7 +115,7 @@ int	Phonebook::search_contact(void)
 			std::cout << "$> Enter the index you want to see!!!" << std::endl;
 			std::cout << "$>> ";
 			std::getline(std::cin, indexStr);
-			if (!std::cin)
+			if (std::cin.eof())
 				return (EOF_FLAG);
 			i = atoi(indexStr.c_str());
 			if (isNumber(indexStr) && !isTooBig(i, maxIndex) && !isTooSmall(i))

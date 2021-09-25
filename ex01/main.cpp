@@ -1,4 +1,5 @@
 # include "Phonebook.hpp"
+# include <iostream>
 
 int	main(void)
 {
@@ -6,10 +7,12 @@ int	main(void)
 	std::string command;
 
 	Phonebook.show_first_screen();
-	while (std::cin)
+	while (!std::cin.eof())
 	{
 		std::cout << "$>> ";
 		std::getline(std::cin, command);
+		if (std::cin.eof())
+			break ;
 		if (command == "ADD")
 		{
 			if (Phonebook.add_contact() == EOF_FLAG)
@@ -26,7 +29,7 @@ int	main(void)
 			std::cout << "See you again!!" << std::endl;
 			break ;
 		}
-		if (std::cin)
+		if (!std::cin.eof())
 			Phonebook.show_command();
 	}
 	return (0);
