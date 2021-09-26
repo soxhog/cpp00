@@ -24,7 +24,6 @@ bool	is_lowalpha(char c)
 
 int	main(int argc, char **argv)
 {
-	char	*p;
 	char	c;
 	int		len;
 
